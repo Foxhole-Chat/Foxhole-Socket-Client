@@ -1,8 +1,9 @@
-﻿# CMakeList.txt : Top-level CMake project file, do global configuration
-# and include sub-projects here.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required(VERSION 3.8)
 
-project ("Foxhole-Socket-Client")
+project("Foxhole-Socket-Client")
+
+include_directories("D:/Programs/Windows/Developer_Tools/emsdk/upstream/emscripten/cache/sysroot/include/")
 
 add_executable("Foxhole-Socket-Client" "Main.cpp")
+
+set_target_properties("Foxhole-Socket-Client" PROPERTIES LINK_FLAGS "-s STANDALONE_WASM")
